@@ -2,6 +2,7 @@ import React from 'react'
 import Heading from '@/components/backend/Heading'
 import LargeCards from '@/components/backend/LargeCards'
 import SmallCards from '@/components/backend/SmallCards'
+import DashboardChart from '@/components/backend/DashboardChart'
 
 export default function page() {
   return (
@@ -12,6 +13,7 @@ export default function page() {
         {/* Small Cards */}
         <SmallCards />
         {/* Charts */}
+        <DashboardChart />
         {/* Recent Orders Table */}
     </div>
   )

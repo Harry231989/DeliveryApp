@@ -41,3 +41,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Dependency Installed
 # sass for css
 # lucide-react for Icons 
+# Installed react-chartjs-2

@@ -2,18 +2,18 @@ import React from 'react';
 
 
 import {
-  CalendarArrowDown,
-  Calendar1,
-  BadgeEuro,
+  CircleDashed,
+  PackageSearch,
+  PackageCheck,
   ShoppingCart,
   LucideProps,
 } from 'lucide-react';
 import SmallCard from './SmallCard';
 
 interface cartStat {
-  period: string;
-  sales: number;
-  color: string;
+  title: string;
+  number: number;
+  iconBg: string;
   icon: React.ComponentType<LucideProps>;
 }
 
@@ -21,34 +21,34 @@ export default function SmallCards() {
   const cartStats: cartStat[] = [
     {
       title: 'Total Order',
-      sales: 150,
-      iconBg: 'bg-green-600',
+      number: 150,
+      iconBg: 'bg-blue-600',
       icon: ShoppingCart,
     },
     {
       title: 'Orders Pending',
-      sales: 100,
-      iconBg: 'bg-orange-600',
-      icon: CalendarArrowDown,
+      number: 100,
+      iconBg: 'bg-yellow-600',
+      icon: CircleDashed,
     },
     {
       title: 'Orders Processing',
-      sales: 200,
-    
-      icon: Calendar1,
+      number: 200,
+      iconBg: 'bg-purple-600',
+      icon: PackageSearch,
     },
     {
       title: 'Orders Delivered',
-      sales: 150,
-      
-      icon: BadgeEuro,
+      number: 150,
+      iconBg: 'bg-green-600',
+      icon: PackageCheck,
     },
   ];
 
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-8'>
-      {cartStats.map((item, i) => (
-        <SmallCard  />
+      {cartStats.map((data, i) => (
+         <SmallCard data={data} key={i} />
       ))}
     </div>
   );
