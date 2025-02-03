@@ -22,19 +22,19 @@ export default function SmallCards() {
     {
       title: 'Total Order',
       number: 150,
-      iconBg: 'bg-blue-600',
+      iconBg: 'bg-[#CD0000]',
       icon: ShoppingCart,
     },
     {
       title: 'Orders Pending',
       number: 100,
-      iconBg: 'bg-yellow-600',
+      iconBg: 'bg-[#DF5500]',
       icon: CircleDashed,
     },
     {
       title: 'Orders Processing',
       number: 200,
-      iconBg: 'bg-purple-600',
+      iconBg: 'bg-[#990100]',
       icon: PackageSearch,
     },
     {

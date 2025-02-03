@@ -1,19 +1,128 @@
-import React from 'react'
-import { AlignJustify, Bell, Sun, User } from 'lucide-react'
+import React from 'react';
+import {
+  AlignJustify,
+  Bell,
+  LayoutDashboard,
+  Settings,
+  LogOut,
+  X,
+} from 'lucide-react';
+import Image from 'next/image';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import ThemeSwitcherBtn from '../ThemeSwitcherBtn';
 
 export default function Navbar() {
   return (
-    <div className='flex items-center justify-between bg-slate-800 text-slate-50  h-16 px-8 py-4 fixed top-0 w-full left-60'>
-        {/* Icon */}
-        <button>
-            <AlignJustify />
-        </button>
-        {/* 3 Icons */}
-        <div className="flex space-x-3">
-            <button> <Sun /> </button>
-            <button> <Bell /> </button>
-            <button> <User /> </button>
-        </div>
+    <div className='fixed top-0 left-60 w-[calc(100%-15rem)] h-16 flex items-center justify-between bg-white dark:bg-slate-800 text-gray-900 dark:text-white px-8 z-50 shadow'>
+      {/* Sidebar Toggle Icon */}
+      <button className='text-[#990100] dark:text-white flex items-center'>
+        <AlignJustify size={24} />
+      </button>
+
+      {/* Right Section */}
+      <div className='flex items-center space-x-6'>
+        {/* Theme Switcher */}
+        <ThemeSwitcherBtn />
+
+        {/* Notifications Dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <button
+              type='button'
+              className='relative inline-flex items-center p-2 bg-transparent rounded-lg'
+            >
+              <Bell className='text-[#CD0000]' size={24} />
+              <div className='absolute -top-1 -right-2 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full'>
+                20
+              </div>
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className='w-72 py-2 px-4'>
+            <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <div className='flex items-center space-x-3'>
+                <Image
+                  src='/Gadafi.png'
+                  alt='user profile'
+                  width={32}
+                  height={32}
+                  className='w-8 h-8 rounded-full'
+                />
+                <div>
+                  <p className='font-medium'>New Product all in-stock</p>
+                  <p className='text-xs text-gray-500'>27 Jan 2025 - 11:11AM</p>
+                </div>
+                <button className='ml-auto text-gray-500 hover:text-gray-700'>
+                  <X size={16} />
+                </button>
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <div className='flex items-center space-x-3'>
+                <Image
+                  src='/Gadafi.png'
+                  alt='user profile'
+                  width={32}
+                  height={32}
+                  className='w-8 h-8 rounded-full'
+                />
+                <div>
+                  <p className='font-medium'>New Product all in-stock</p>
+                  <p className='text-xs text-gray-500'>27 Jan 2025 - 11:11AM</p>
+                </div>
+                <button className='ml-auto text-gray-500 hover:text-gray-700'>
+                  <X size={16} />
+                </button>
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {/* Profile Dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Image
+              src='/Gadafi.png'
+              alt='user profile'
+              width={32}
+              height={32}
+              className='w-8 h-8 rounded-full'
+            />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className='w-40 py-2 px-4'>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <button className='flex items-center space-x-2'>
+                <LayoutDashboard className='h-4 w-4' />
+                <span>Dashboard</span>
+              </button>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <button className='flex items-center space-x-2'>
+                <Settings className='h-4 w-4' />
+                <span>Edit Profile</span>
+              </button>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <button className='flex items-center space-x-2'>
+                <LogOut className='h-4 w-4' />
+                <span>Logout</span>
+              </button>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
-  )
+  );
 }

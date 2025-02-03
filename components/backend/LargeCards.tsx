@@ -20,25 +20,25 @@ export default function LargeCards() {
     {
       period: 'Today Orders',
       sales: 11000,
-      color: 'bg-green-600',
+      color: 'bg-[#1E658F]',
       icon: BookType,
     },
     {
       period: 'Yesterday Orders',
       sales: 14000,
-      color: 'bg-blue-600',
+      color: 'bg-[#3681B2]',
       icon: CalendarArrowDown,
     },
     {
       period: 'This Month',
       sales: 131000,
-      color: 'bg-yellow-600',
+      color: 'bg-[#032347]',
       icon: Calendar1,
     },
     {
       period: 'All Time Sales',
       sales: 8000000,
-      color: 'bg-purple-600',
+      color: 'bg-[#3D7299]',
       icon: BadgeEuro,
     },
   ];
@@ -46,7 +46,7 @@ export default function LargeCards() {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-8'>
       {orderStats.map((item, i) => (
-        <LargeCard className='bg-green-600' data={item} key={i} />
+        <LargeCard className='bg-[#1E658F]' data={item} key={i} />
       ))}
     </div>
   );
