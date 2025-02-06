@@ -10,13 +10,13 @@ export default function page() {
     <div>
         <Heading title='Dashboard Overview'/>
         {/* Large Cards */}
-        <LargeCards />
+         <LargeCards /> 
         {/* Small Cards */}
-        <SmallCards />
+        <SmallCards /> 
         {/* Charts */}
-        <DashboardChart />
+         <DashboardChart /> 
         {/* Recent Orders Table */}
-        <CustomDataTable />
+         <CustomDataTable /> 
     </div>
   )
 }
