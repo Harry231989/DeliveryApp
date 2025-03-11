@@ -5,21 +5,25 @@ import Image from 'next/image';
 import logo from '../../public/logo.png';
 import {
   Boxes,
+  Building2,
   Car,
   ChevronDown,
   ChevronRight,
+  CircleDollarSign,
   FileUser,
   Globe,
   LayoutGrid,
   LayoutList,
   LogOut,
   MonitorPlay,
+  NotebookText,
   ScanSearch,
   SendToBack,
   Settings,
   Shuffle,
   Slack,
   Store,
+  BriefcaseBusiness,
   Users,
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -44,9 +48,9 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       href: '/dashboard/markets',
     },
     {
-      title: 'Drivers',
-      icon: Car,
-      href: '/dashboard/drivers',
+      title: 'Clients',
+      icon: BriefcaseBusiness,
+      href: '/dashboard/clients',
     },
     {
       title: 'Orders',
@@ -58,11 +62,23 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       icon: FileUser,
       href: '/dashboard/staffs',
     },
+
+    {
+      title: 'PTs Community',
+      icon: Building2,
+      href: '/dashboard/community',
+    },
+    {
+      title: 'Wallet',
+      icon: CircleDollarSign,
+      href: '/dashboard/wallet',
+    },
     {
       title: 'Settings',
       icon: Settings,
       href: '/dashboard/settings',
     },
+
     {
       title: 'Online Store',
       icon: Globe,
@@ -81,21 +97,27 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
       icon: LayoutList,
       href: '/dashboard/categories',
     },
-    {
-      title: 'Attributes',
-      icon: SendToBack,
-      href: '/dashboard/attributes',
-    },
+    // {
+    //   title: 'Attributes',
+    //   icon: SendToBack,
+    //   href: '/dashboard/attributes',
+    // },
+
     {
       title: 'Coupons',
       icon: ScanSearch,
       href: '/dashboard/coupons',
     },
     {
-      title: 'store sliders',
+      title: 'Store Banners',
       icon: MonitorPlay,
-      href: '/dashboard/sliders',
+      href: '/dashboard/banners',
     },
+    // {
+    //   title: 'store sliders',
+    //   icon: MonitorPlay,
+    //   href: '/dashboard/sliders',
+    // },
   ];
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -104,8 +126,8 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
     <div
       className={
         showSidebar
-          ? 'sm:block mt-10 sm:mt-0 fixed top-0 left-0 w-72 h-screen bg-slate-50 dark:bg-slate-700 bg-white  shadow-md px-6 py-4 overflow-y-scroll'
-          : 'mt-20 sm:mt-0 hidden sm:block   fixed top-0 left-0 w-72 h-screen bg-slate-50 dark:bg-slate-700 bg-white  shadow-md px-6 py-4 overflow-y-scroll'
+          ? 'sm:block mt-10 sm:mt-0 fixed top-0 left-0 w-72 h-screen bg-slate-100 dark:bg-slate-800 bg-white  shadow-md px-6 py-4 overflow-y-scroll'
+          : 'mt-20 sm:mt-0 hidden sm:block   fixed top-0 left-0 w-72 h-screen bg-slate-100 dark:bg-slate-800 bg-white  shadow-md px-6 py-4 overflow-y-scroll'
       }
     >
       {/* Logo */}
@@ -141,7 +163,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
                 <Slack />
                 <span>Menu</span>
               </div>
-              {openMenu ? <ChevronRight /> : <ChevronDown />}
+              {openMenu ? <ChevronDown /> : <ChevronRight />}
             </button>
           </CollapsibleTrigger>
           <CollapsibleContent className='px-2 pl-10'>
@@ -185,7 +207,7 @@ export default function Sidebar({ showSidebar, setShowSidebar }) {
           );
         })}
         <div className='px-6 py-2'>
-          <button className='bg-[#032347] rounded-md   flex items-center space-x-3 px-8 py-3'>
+          <button className='dark:bg-[#3681B2] dark:hover:bg-[#1E658F] bg-[#3681B2] hover:bg-[#1E658F] text-white  rounded-md   flex items-center space-x-3 px-8 py-3'>
             <LogOut />
             <span>Logout</span>
           </button>

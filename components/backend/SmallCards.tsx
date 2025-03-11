@@ -40,7 +40,7 @@ export default function SmallCards() {
     {
       title: 'Orders Delivered',
       number: 150,
-      iconBg: 'bg-green-600',
+      iconBg: 'bg-[#EF9226]',
       icon: PackageCheck,
     },
   ];

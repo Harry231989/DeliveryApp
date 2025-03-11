@@ -93,3 +93,56 @@ body {
   background: #888;
   border-radius: 5px;
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Light mode (default styles) */
+.quill-editor .ql-toolbar {
+    background-color: #ffffff; /* Light toolbar */
+    border: 1px solid #ddd;
+}
+
+.quill-editor .ql-container {
+    background-color: #ffffff; /* Light content */
+    color: #000000;
+    border: 1px solid #ddd;
+}
+
+/* 🌙 Brighter Dark Mode Styles */
+.dark .quill-editor .ql-toolbar {
+    background-color: #374151; /* Brighter toolbar */
+    border: 1px solid #4b5563;
+}
+
+.dark .quill-editor .ql-container {
+    background-color: #1f2937; /* Slightly lighter dark mode */
+    color: #ffffff; /* Bright white text */
+    border: 1px solid #4b5563;
+}
+
+/* 🟡 Brighter Toolbar Buttons in Dark Mode */
+.dark .quill-editor .ql-toolbar button {
+    color: #f3f4f6; /* Brighter text */
+    opacity: 0.85;
+}
+
+.dark .quill-editor .ql-toolbar button:hover {
+    background-color: #4b5563; /* Brighter hover effect */
+    opacity: 1;
+}
+
+/* 🌟 Improve Placeholder Text Visibility in Dark Mode */
+.dark .quill-editor .ql-editor.ql-blank::before {
+    color: #d1d5db; /* Brighter placeholder text */
+}
+
+/* 🟡 Brighter Icons (Bold, Italic, etc.) */
+.dark .quill-editor .ql-toolbar .ql-stroke {
+    stroke: #f9fafb; /* White stroke */
+}
+ 
+.dark .quill-editor .ql-toolbar .ql-fill {
+    fill: #f9fafb; /* White fill */
+}
